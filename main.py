@@ -11,8 +11,8 @@ from pynput.keyboard import Listener, Key
 import requests
 devices = []
 #pygame.mixer.init()
-
 path = '%s\\Poli binds\\' %  os.environ['APPDATA']
+icon = path+"\\Poli_Binds_icon.ico"
 if not os.path.exists(path):
     print("Lokalizacja: " + path + ' nie istnieje! Tworze ja...')
     os.makedirs(path)
@@ -34,6 +34,14 @@ if not os.path.exists(path+"\\stop.txt"):
     open(path+"\\stop.txt","a")
 if not os.path.exists(path+"\\volume.txt"):
     open(path+"\\volume.txt","a")
+if not os.path.exists(icon):
+    try:
+        iconLink = 'https://xpolix.github.io/polibinds/Poli_Binds_icon.ico'
+        r2 = requests.get(iconLink, allow_redirects=True)
+        open(icon, 'wb').write(r2.content)
+        print('Downloading icon complete!')
+    except:
+        print("Error while downloading icon!")
 def DownloadReplaceKeys():
     ReplaceKeysLink = 'https://xpolix.github.io/polibinds/replace_keys.txt'
     r = requests.get(ReplaceKeysLink, allow_redirects=True)
@@ -45,6 +53,7 @@ def skipDownloading():
 if not os.path.exists(path+"\\replace_keys.txt"):
     print("You don't have replace_keys.txt in program directory, do you want to download it?")
     askWindowDownload = Tk()
+    askWindowDownload.iconbitmap(icon)
     askWindowDownload.geometry("300x300")
     askWindowDownload.title("File not found!")
     askWindowDownload.resizable(0, 0)
@@ -355,6 +364,7 @@ def optionsButton(idBind, name, color, btn):
             except:
                 xchooseButtonWindow = 769
             chooseButtonWindow = Toplevel(optionsWindow)
+            chooseButtonWindow.iconbitmap(icon)
             chooseButtonWindow.geometry('250x250')
             chooseButtonWindow.configure(bg="white")
             chooseButtonWindow.protocol("WM_DELETE_WINDOW", chooseButtonClose)
@@ -403,6 +413,7 @@ def optionsButton(idBind, name, color, btn):
     global optionsWindow
     if optionsWindow is None:
         optionsWindow = Toplevel(app)
+        optionsWindow.iconbitmap(icon)
         optionsWindow.protocol("WM_DELETE_WINDOW", close_top)
         optionsWindow.geometry('250x250')
         optionsWindow.configure(bg=color)
@@ -552,6 +563,7 @@ def xhearForStopSounds(color, key):
         global chooseButtonWindow
         chooseButtonWindow = 23904230
         xchooseButtonWindow = Toplevel(app)
+        xchooseButtonWindow.iconbitmap(icon)
         xchooseButtonWindow.geometry('250x250')
         xchooseButtonWindow.configure(bg="white")
         xchooseButtonWindow.protocol("WM_DELETE_WINDOW", xchooseButtonClose)
@@ -579,6 +591,7 @@ listener.start()
 app.geometry("300x300")
 app.resizable(0, 0)
 app.title("Main window")
+app.iconbitmap(icon)
 urzadzenie = open(path+"\\config_audio.txt","r").read()
 print(urzadzenie)
 id_data = 0
@@ -693,11 +706,10 @@ scale.place(relx=1, rely=0.5, anchor=E)
 scale.set(scale_value)
 label_stopsounds = Label(app, text="")
 label_stopsounds.place(relx=1, rely=0.225, anchor=E)
-orig_color = label_stopsounds.cget("background")
-print(orig_color)
 #BINDS#
 
 newWindow = Toplevel(app)
+newWindow.iconbitmap(icon)
 newWindow.geometry('350x750')
 newWindow.title("Binds")
 #newWindow.attributes('-toolwindow', True)
