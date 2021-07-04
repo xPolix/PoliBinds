@@ -1,8 +1,107 @@
-<html>
 <head>
-<title>Poli Binds</title>
-</head>
-<body>
-Download
-</body>
+  <title>
+    PoliHub- WITAJ!
+  </title>
+  <link rel="Shortcut icon" href="icon.png" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="style.css">
+  </head>
+    <body style="background-color: #4dd2ff;" onload="showElement()">
+      <a href="https://xpolix.github.io/stronka/" style="z-index: 50;"> <img src="logo_website_white.png" alt="Image" class="logo" style="z-index: 50;"> </a>
+      
+      
+      
+      <center>
+      <p style="font-size:40pt;font-family:verdana;"><b>PoliHub</b></p>
+      <div class="by">by Janek Z.</div>
+      </center>
+      
+        <div class="fixed" style="z-index: 1000;">
+          <div class="dropdown">
+            <button class="dropbtn" style="cursor:pointer;width:75px;height:75;"> <i class="fas fa-bars" style="position:relative;right:7px;top:-11px;font-size:66px;color:#80dfff;"></i></button>
+              <div class="dropdown-content">
+                <a href="index"><p style="font-size:16pt;font-family:verdana;"> <b>Strona główna</b> </p></a>
+                <a href="bindy_login"><p style="font-size:16pt;font-family:verdana;"> Bindy </p></a>
+                <a href="galeria"><p style="font-size:16pt;font-family:verdana;"> Galeria </p></a>
+                <a href="autor"><p style="font-size:16pt;font-family:verdana;"> Autor </p></a>
+                <a href="chillroom"><p style="font-size:16pt;font-family:verdana;"> Chillroom </p></a>
+              </div>
+            </div>
+        </div>
+      
+      <ul>
+       <li>
+      <p style="font-size:40pt;font-family:verdana;color:black;text-align: center;"> Bindy </p>
+      <div class="zoom">
+        
+      <a href="https://xpolix.github.io/stronka/bindy_login.html">
+        <div class="zoomimg">
+          <img src="forest_bg.jpg" style="position:relative;right:50px;top:-50px;width:167%;height:140%;">
+      
+        </div>
+      </a>
+      </div></li>
+      <li>
+            <p style="font-size:40pt;font-family:verdana;color:black;text-align: center;"> Galeria </p>
+      <div class="zoom">
+        
+      <a href="https://xpolix.github.io/stronka/galeria">
+        <div class="zoomimg">
+          <img src="forest_bg.jpg" style="position:relative;right:50px;top:-50px;width:167%;height:140%;">
+      
+        </div>
+      </a>
+      </div>
+        </li> <li>
+        <p style="font-size:40pt;font-family:verdana;color:black;text-align: center;"> Kamerka </p>
+      <div class="zoom">
+        
+      <a href="https://xpolix.github.io/stronka/kamerka">
+        <div class="zoomimg">
+          <img src="menu_kamerka.png" style="position:relative;right:50px;top:-50px;width:167%;height:140%;">
+      
+        </div>
+      </a>
+      </div>
+        </li> <li>
+        <p style="font-size:40pt;font-family:verdana;color:black;text-align: center;"> Chillroom </p>
+      <div class="zoom">
+        
+      <a href="https://xpolix.github.io/stronka/chillroom">
+        <div class="zoomimg">
+          <img src="forest_bg.jpg" style="position:relative;right:50px;top:-50px;width:167%;height:140%;">
+      
+        </div>
+      </a>
+      </div>
+        </li>
+        
+      </ul>
+      <iframe src="https://player.twitch.tv/?channel=graczpoli&parent=www.xpolix.github.io/" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+      
+      <br><br>
+      <div class="fixed" id="chat" style="right: 350; top: auto; bottom: 450;">
+      <input type="button" value="X" class="dbutton" style="position:absolute;top:-55px;color:red;background-color:#fe5050;font-weight:bold;" onclick="hideElement()"/>
+      <iframe src="https://deadsimplechat.com/k9aPsh_8-" style="width: 400px; height: 500px; border: none;border-radius: 16px;"></iframe></div>
+      <input type="button" value="Chat" class="dbutton" style="position:fixed;top:auto;bottom:10px;right:20px;color:green;background-color:#4CAF50;" id="enableChat" onclick="showElement()"/>
+      <br><br><br>
+    <div class="center">
+      <p>END.</p>
+    </div>
+      
+  <script type="text/javascript">
+  function hideElement()
+  {
+  document.getElementById("chat").style.display = "none";
+  document.getElementById("enableChat").style.display = "block";
+  }
+  function showElement()
+    {
+      document.getElementById("enableChat").style.display = "none";
+      document.getElementById("chat").style.display = "block";
+    }
+  </script>
+      
+    </body>
+  
 </html>
